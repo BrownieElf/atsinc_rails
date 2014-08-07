@@ -1,0 +1,46 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+#
+default: &default
+  # adapter: sqlite3
+  # pool: 5
+  # timeout: 5000
+
+
+  ######## This works for Atsinc.
+
+  adapter: sqlserver
+  database: lme_dev_1030
+  username: rbacci
+  password: brownieelf1
+  host: 50.240.72.61
+  port: 14362
+
+development:
+
+  adapter: sqlserver
+  database: lme_dev_1030
+  username: rbacci
+  password: brownieelf1
+  host: 50.240.72.61
+  port: 14362
+
+  <<: *default
+  # database: db/development.sqlite3
+  #database: lme_dev_1030
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+
+  <<: *default
+  database: db/test.sqlite3
+  database: lme_dev_1030
+  
+production:
+  <<: *default
+  #database: db/production.sqlite3
+  #database: lme_dev_1030

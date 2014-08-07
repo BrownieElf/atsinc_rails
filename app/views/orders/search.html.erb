@@ -1,0 +1,26 @@
+
+
+<br>
+
+  <%= "Container number: #{@container}" %> 
+    <br>
+    <br> 
+
+<% if @order %>     
+  <%= "Id: #{@order.id}" %><br> 
+  <%= "Revenue Code Id: #{@order.revenue_code_id}" %><br> 
+  <%= "Status: #{@order.status}" %><br>
+  <%= "Temperature min: #{@order.temperature_min}" %><br>
+  
+  <%= "Ordered Date: #{@order.ordered_date}" %><br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+<% else %>
+  <%= "We are sorry...container number: #{@container} has not yet reached our facility." %>
+<% end %>
+<br>
+
+

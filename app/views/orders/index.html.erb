@@ -1,0 +1,23 @@
+<h1>ATS Logistics Container Tracking System</h1>
+
+
+<div class='container_form'>
+  <%= form_tag("orders/search", method: "get") do %>
+    <%= label_tag(:container_planned, "Enter your container number:") %>
+    <%= text_field_tag(:container_planned) %>
+    <%= submit_tag("Track my container!", name: nil) %>
+  <% end %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
