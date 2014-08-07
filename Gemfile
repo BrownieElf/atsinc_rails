@@ -40,7 +40,7 @@ gem 'spring',        group: :development
 
 group :production do
     gem 'rails_12factor'
-
+    gem 'pg'
     #gem 'mysql2'
 end
 
