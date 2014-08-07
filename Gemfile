@@ -48,3 +48,9 @@ end
 
 gem 'tiny_tds'
 gem 'activerecord-sqlserver-adapter'
+
+
+##### add twitter bootstrap to rails
+gem 'therubyracer'
+gem 'less-rails-bootstrap'
+
