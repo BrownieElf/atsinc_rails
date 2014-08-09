@@ -1,26 +1,37 @@
-
-
-<br>
-
-  <%= "Container number: #{@container}" %> 
-    <br>
-    <br> 
-
-<% if @order %>     
-  <%= "Id: #{@order.id}" %><br> 
-  <%= "Revenue Code Id: #{@order.revenue_code_id}" %><br> 
-  <%= "Status: #{@order.status}" %><br>
-  <%= "Temperature min: #{@order.temperature_min}" %><br>
-  
-  <%= "Ordered Date: #{@order.ordered_date}" %><br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-<% else %>
-  <%= "We are sorry...container number: #{@container} has not yet reached our facility." %>
-<% end %>
-<br>
-
+<div class="container-fluid">
+  <div class='row'>
+    <div class='column col-md-6 col-md-offset-3'>
+      <br> 
+        <% if @order %> 
+          <div class='text-center'> 
+            <%= "Container number: #{@container}" %><br>
+            <%= "Revenue Code Id: #{@order.revenue_code_id}" %><br> 
+            <%= "Status: #{@order.status}" %><br>
+            <%= "Temperature min: #{@order.temperature_min}" %><br>
+            <%= "Ordered Date: #{@order.ordered_date}" %><br>
+          </div> 
+          <br>
+          <% if @order.temperature_min == 1 %>
+            <div class="alert alert-success text-center text-bold" role="alert">
+              <%= "Container number #{@container} has been inspected and released to the yard." %>
+            </div>
+          <% elsif @order.temperature_min == 2 %>
+            <div class="alert alert-info text-center text-bold" role="alert">
+              <%= "Container number #{@container} is on hold awaiting inspection." %>
+            </div>
+          <% else %>
+            <div class="alert alert-warning text-center text-bold" role="alert">
+              <%= "Container number #{@container} is in the yard pending inspection." %>
+            </div>  
+          <% end %> 
+          <br>
+        <% else %>
+          <div class="alert alert-danger text-center text-bold" role="alert">
+            <%= "Container number #{@container} has not yet reached our facility." %>
+          </div>
+        <% end %>
+      <br>
+    </div>
+  </div>
+</div>
 

@@ -12,12 +12,12 @@ default: &default
 
   ######## This works for Atsinc.
 
-  adapter: sqlserver
-  database: lme_dev_1030
-  username: rbacci
-  password: brownieelf1
-  host: 50.240.72.61
-  port: 14362
+  # adapter: sqlserver
+  # database: lme_dev_1030
+  # username: rbacci
+  # password: brownieelf1
+  # host: 50.240.72.61
+  # port: 14362
 
 development:
 

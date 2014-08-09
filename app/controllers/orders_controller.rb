@@ -6,13 +6,21 @@ class OrdersController < ApplicationController
   end
 
   def search
-    @container = params[:container_planned]
+    @container = params[:container_planned].to_s
 
     ## until switch to production where 'CES' values exist
     #criteria = "container_planned = ? AND revenue_code_id = 'CES' AND status = 'P'"
-    criteria = "container_planned = ? AND revenue_code_id = 'CES' OR status = 'P'"
 
-  
-    @order = Order.find_by(criteria, params[:container_planned])
+    ## SELECT
+      fields = 'id, revenue_code_id, status, ordered_date, temperature_min'
+    
+    ## where                                               
+      criteria = "container_planned = ? AND (revenue_code_id = 'CES' AND status = 'P')"
+
+
+    @order = Order.select(fields).find_by(criteria, params[:container_planned])
+
   end
 end
+
+
