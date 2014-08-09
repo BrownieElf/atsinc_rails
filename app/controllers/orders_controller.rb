@@ -13,10 +13,8 @@ class OrdersController < ApplicationController
 
     ## SELECT
       fields = 'id, revenue_code_id, status, ordered_date, temperature_min'
-    
     ## where                                               
       criteria = "container_planned = ? AND (revenue_code_id = 'CES' AND status = 'P')"
-
 
     @order = Order.select(fields).find_by(criteria, params[:container_planned])
 
