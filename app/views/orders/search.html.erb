@@ -7,7 +7,7 @@
             <%= "Container number: #{@container}" %><br>
             <%= "Revenue Code Id: #{@order.revenue_code_id}" %><br> 
             <%= "Status: #{@order.status}" %><br>
-            <%= "Temperature min: #{@order.temperature_min}" %><br>
+            <%= "Temperature min: #{@order.temperature_min.to_i}" %><br>
             <%= "Ordered Date: #{@order.ordered_date}" %><br>
           </div> 
           <br>
