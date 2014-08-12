@@ -11,11 +11,11 @@
             <%= "Ordered Date: #{@order.ordered_date}" %><br>
           </div> 
           <br>
-          <% if @order.temperature_min == 1 %>
+          <% if @order.temperature_min.to_i == 1 %>
             <div class="alert alert-success text-center text-bold" role="alert">
               <%= "Container number #{@container} has been inspected and released to the yard." %>
             </div>
-          <% elsif @order.temperature_min == 2 %>
+          <% elsif @order.temperature_min.to_i == 2 %>
             <div class="alert alert-info text-center text-bold" role="alert">
               <%= "Container number #{@container} is on hold awaiting inspection." %>
             </div>
