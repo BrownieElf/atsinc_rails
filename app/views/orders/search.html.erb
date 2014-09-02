@@ -5,31 +5,28 @@
         <% if @order %> 
           <div class='text-center'> 
             <%= "Container number: #{@container}" %><br>
-            <%= "Revenue Code Id: #{@order.revenue_code_id}" %><br> 
-            <%= "Status: #{@order.status}" %><br>
-            <%= "Temperature min: #{@order.temperature_min.to_i}" %><br>
-            <%= "Ordered Date: #{@order.ordered_date}" %><br>
           </div> 
           <br>
-          <% if @order.temperature_min.to_i == 1 %>
+          <% if @order.temperature_min.to_i == nil %>
             <div class="alert alert-success text-center text-bold" role="alert">
-              <%= "Container number #{@container} has been inspected and released to the yard." %>
-            </div>
-          <% elsif @order.temperature_min.to_i == 2 %>
-            <div class="alert alert-info text-center text-bold" role="alert">
-              <%= "Container number #{@container} is on hold awaiting inspection." %>
+              <%= "Container number #{@container} has not yet arrived at our facility. Please check the port website for status." %>            
             </div>
           <% else %>
             <div class="alert alert-warning text-center text-bold" role="alert">
-              <%= "Container number #{@container} is in the yard pending inspection." %>
+              <%= "Container number #{@container} is on the yard pending inspection." %>
             </div>  
           <% end %> 
           <br>
         <% else %>
           <div class="alert alert-danger text-center text-bold" role="alert">
-            <%= "Container number #{@container} has not yet reached our facility." %>
+            <%= "Container number #{@container} has not yet arrived at our facility. Please check the port website for status." %>
           </div>
         <% end %>
+      <br>
+        <p class='text-center'>For more information you can Email us at: <%= mail_to 'warehouse@atsinc.net' %></p>
+        <p class='text-center'><%= "or reach us by phone at: (843) 308-6555." %></p>
+
+      <br>
       <br>
         <p class='text-center'><%= link_to 'Back to Home', 'http://atsinc.herokuapp.com' %></p>
     </div>
