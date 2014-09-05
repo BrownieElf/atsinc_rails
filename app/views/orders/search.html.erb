@@ -7,12 +7,27 @@
             <%= "Container number: #{@container}" %><br>
           </div> 
           <br>
-          <% if @order.temperature_min.to_i == nil %>
+          <% if @order.temperature_min.to_i == 1 %>
+
+            <div class="alert alert-success text-center text-bold" role="alert">
+              <%= "Exam has been completed, awaiting return."%>         
+            </div>
+
+          <% elsif @order.temperature_min.to_i != nil @order.temperature_min.to_i != 1 %>
+
+            <div class="alert alert-success text-center text-bold" role="alert">
+              <%= "Your container is at the CES pending release."%>            
+            </div>    
+
+          <% elsif @order.temperature_min.to_i == nil %>
+
             <div class="alert alert-success text-center text-bold" role="alert">
               <%= "Your container is not on the ATS yard. Please check the port website "%>
               <%= link_to 'here', "http://www.port-of-charleston.com/Cargo/operational_tools/cargo_inquiry/cargo_inquiry.asp" %> for status.            
-            </div>
+            </div>  
+
           <% else %>
+
             <div class="alert alert-warning text-center text-bold" role="alert">
               <%= "Container number #{@container} is on the yard pending inspection." %><br>
               <br>
@@ -30,7 +45,7 @@
       
       <br>
       <br>
-        <p class='text-center'><%= link_to 'Back to Home', 'http://atsinc.herokuapp.com' %></p>
+        <p class='text-center'><%= link_to 'Back to Home', 'http://atsinc.net' %></p>
     </div>
   </div>
 </div>
