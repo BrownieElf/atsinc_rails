@@ -15,13 +15,13 @@
 
           <% else %>
 
-            <div class="alert alert-success text-center text-bold" role="alert">
+            <div class="alert alert-info text-center text-bold" role="alert">
               <%= "Your container is at the CES pending release."%>            
             </div>    
           <% end %> 
           <br>
         <% else %>
-          <div class="alert alert-danger text-center text-bold" role="alert">
+          <div class="alert alert-warning text-center text-bold" role="alert">
             <%= "Your container is not on the ATS yard. Please check the port website "%>
               <%= link_to 'here', "http://www.port-of-charleston.com/Cargo/operational_tools/cargo_inquiry/cargo_inquiry.asp" %> for status.  
           </div>

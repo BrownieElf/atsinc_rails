@@ -14,13 +14,12 @@
             <br>
             <%= text_field_tag(:container_planned) %>
             <br>
-            <% if flash.alert %>
+
+            <% flash.each do |key, value| %>
               <div class="alert alert-danger text-center text-bold" role="alert">
-                <p id="alert"><%= alert %></p>
+                <%= content_tag :div, value, class: "flash #{key}" %>
               </div>
             <% end %>
-
-
           </p>
           <br>
           <p class='text-center'>
