@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     root 'orders#index'
     get 'orders/search' => 'orders#search'
 
-    get 'searches/index' => 'searches#index'
-    get 'searches/search' => 'searches#search'
+    #get 'searches/index' => 'searches#index'
+    #get 'searches/search' => 'searches#search'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
